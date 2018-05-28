@@ -1,0 +1,52 @@
+page{background-color: #f6f7f8;}
+.rui-icon{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+}
+.rui-nav-box{
+  font-size: 0;
+  padding: 20px 15px;
+}
+.rui-nav-content{
+  display: inline-block;
+  border: 1px solid #2B81FF;
+  border-radius: 6px;
+  color: #2B81FF;
+  overflow: hidden;
+  font-size: 0;
+}
+.rui-nav-content view{
+  display: inline-block;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  width: 60px;
+  text-align: center;
+  border-right: 1px solid #2b81ff;
+}
+.rui-nav-content view:last-child{border: none;}
+.rui-nav-content view.active{
+  background-color: #2B81FF;
+  color: #fff;
+}
+.rui-picker{
+  display: inline-block;
+  font-size: 12px;
+  width: 110px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+}
+.rui-picker-box{
+  width: 245px;
+  height: 32px;
+  line-height: 32px;
+  background-color: #2B81FF;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  overflow: hidden;
+  color: #fff;
+}

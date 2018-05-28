@@ -1,0 +1,17 @@
+<!--选取时间段  -->
+<view class='rui-nav-box'>
+  <view class='rui-nav-content'>
+    <view bindtap='getDateType' data-datetype="0" class='{{dateType == 0 ? "active" : ""}}'>今日</view>
+    <view bindtap='getDateType' data-datetype="1" class='{{dateType == 1 ? "active" : ""}}'>本周</view>
+    <view bindtap='getDateType' data-datetype="2" class='{{dateType == 2 ? "active" : ""}}'>本月</view>
+    <view bindtap='getDateType' data-datetype="5" class='{{dateType == 5 ? "active" : ""}}'>本季</view>
+    <view bindtap='getDateType' data-datetype="3" class='{{dateType == 3 ? "active" : ""}}'>全年</view>
+  </view>
+  <text class='rui-icon' bindtap='getDateType' data-datetype="4" style='background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA+1pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNyAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMTgtMDUtMjRUMTA6MDY6NTUrMDg6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDE4LTA1LTI0VDAyOjA4OjA4KzA4OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDE4LTA1LTI0VDAyOjA4OjA4KzA4OjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4RTE4NjEwNzU3MUIxMUU4QTk2OUZERjczOTY2MkUwQSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4RTE4NjEwODU3MUIxMUU4QTk2OUZERjczOTY2MkUwQSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjhFMTg2MTA1NTcxQjExRThBOTY5RkRGNzM5NjYyRTBBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjhFMTg2MTA2NTcxQjExRThBOTY5RkRGNzM5NjYyRTBBIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+wonmbAAAAn5JREFUeNrsmE1IVFEUx+/4RTQJYtoHWOBgiNAiUBdlrbIGizIDN2K4EBrciC0UdGGrFn1gC1cTtTBCWyQSBCYJRQsxMQSJEGwRoq5MxdSktPF/5Tw4XO597+obvz3wY871nLn+594z9507gVgsJqLRqLCwI+ATyASXwQ+P3I/gGCgGo16TRyKRtdcEYW9FIB+cBrcscgsot3Qd/0MkKeOL4AHI0uQeZn4jqHGZ1yZ3BjwBr02CQqBHmcxk6YTwmdsOZsF7naByJuY3WFbenEy1Ie0PWHIR4ZUbAGn0WsUF8RpKY/419skcylm8WRM35d435DiWypWup6j76dvyC3R75H6h3GlDbsy2qN1M7nUuSNRsp65gbXPFRlfI+WTLm5DruULPwbzYBjMJyhXbZAlih5lJ0CU6IzaT3b1CB4J2taCj4CU1XGWaeB3oA49BihKTPdEH8M72KLF5dDwEd8i/QG3KBI2vgqfknweTbBwgIcdpfJIaPN8rFGJ+itK8hZTcU8w/RO2uKXfDglrZM+kzGGSxN2CM/DnaWsH6oBds3BKvLesCZ8AJErPCYlMgj2rlO4253QXPwF8wHC9B0n4SOluklTPZ4L44h0ro5pChicntrAWFmpgs7GpQabsbNkn3WEHWg7O0TdJywBAIgv8gDHrZe9/S0SDtCjX0vleIH4bZ4Bwbh0mMM9dNFgsyMdJux2vL+pReeURp/Pm3boD5C+CbYR5fW9ZMtwd50raR79hXcANcJzGvNLUn6+sfO8F9C5JnyCOXeLfLtWgcNBy0H3taUJLyCNiqexlfiCWToC76YSBxi+9lnSal8syocHmIxttkZ9AEOvgfVwUYAK1NeweFjBxiAAAAAElFTkSuQmCC) no-repeat center center/30px 30px;left:326px;top:20px;'></text>
+</view>
+<view style='padding: 0 15px 20px;' class='{{dateType == 4 ? "" : "rui-hide"}}'>
+  <view class='rui-picker-box'>
+    <picker mode="date" class='rui-picker' value="{{startDate}}" start="2000-01-01" end="2200-12-31" id="start" bindchange="bindDateChange">{{startDate}}</picker>~
+    <picker mode="date" class='rui-picker' value="{{endDate}}" start="2000-01-01" end="2200-12-31" id="end" bindchange="bindDateChange">{{endDate}}</picker>
+  </view>
+</view>
