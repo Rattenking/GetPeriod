@@ -31,7 +31,6 @@ Page({
       startDate = this.time.getQuarterStartDate();
       endDate = this.time.getQuarterEndDate();
     }
-
     this.setData({ dateType: dateType, startDate: startDate, endDate: endDate });
   },
   bindDateChange(e){
