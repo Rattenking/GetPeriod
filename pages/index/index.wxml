@@ -15,3 +15,19 @@
     <picker mode="date" class='rui-picker' value="{{endDate}}" start="2000-01-01" end="2200-12-31" id="end" bindchange="bindDateChange">{{endDate}}</picker>
   </view>
 </view>
+
+<!--选取时间段  -->
+<view class='rui-nav-box'>
+  <view class='rui-nav-content'>
+    <view bindtap='getDateTypeR' data-datetype="now" class='{{dateTypeR == "now" ? "active" : ""}}'>今日</view>
+    <view bindtap='getDateTypeR' data-datetype="week" class='{{dateTypeR == "week" ? "active" : ""}}'>本周</view>
+    <view bindtap='getDateTypeR' data-datetype="month" class='{{dateTypeR == "month" ? "active" : ""}}'>本月</view>
+    <view bindtap='getDateTypeR' data-datetype="quarter" class='{{dateTypeR == "quarter" ? "active" : ""}}'>本季</view>
+    <view bindtap='getDateTypeR' data-datetype="year" class='{{dateTypeR == "year" ? "active" : ""}}'>全年</view>
+  </view>
+</view>
+<view style='padding: 0 15px 20px;' class='{{dateType == 4 ? "" : "rui-hide"}}'>
+  <view class='rui-picker-box'>
+    {{date}}
+  </view>
+</view>

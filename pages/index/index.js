@@ -1,11 +1,17 @@
 const GetPeriod = require("../../utils/getperiod.js");
 Page({
   data:{
-    dateType: 0
+    dateType: 0,
+    dateTypeR: 'now'
   },
   onLoad(){
     this.time = new GetPeriod();
-    this.setData({ dateType: 0, startDate: this.time.getNowDate(), endDate: this.time.getNowDate() });
+    this.setData({ dateType: 0, startDate: this.time.getNowDate(), endDate: this.time.getNowDate(), date: this.time.getPeriod() });
+  },
+  // 获取时段字段
+  getDateTypeR(e){
+    let dateType = e.currentTarget.dataset.datetype;
+    this.setData({ dateTypeR: dateType, date: this.time.getPeriod({ periodType: dateType})})
   },
   // 获取当前时间段
   getDateType(e) {

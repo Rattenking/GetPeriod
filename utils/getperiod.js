@@ -79,5 +79,28 @@ class GetPeriod{
   getYearEndDate() {
     return this.formatDate(new Date(this.nowYear, 11, 31));
   }
+  //获取时段方法
+  getPeriod(obj){
+    let opts = obj || {},time = null;
+    opts = {
+      periodType: opts.periodType || 'now',
+      spaceType: opts.spaceType || '~'
+    }
+    function formatNumber(param1, param2){
+      return [param1, param2].join(opts.spaceType);
+    }
+    if (opts.periodType == 'week'){
+      time = formatNumber(this.getWeekStartDate(), this.getWeekEndDate());
+    } else if (opts.periodType == 'month'){
+      time = formatNumber(this.getMonthStartDate(), this.getMonthEndDate());
+    } else if (opts.periodType == 'quarter') {
+      time = formatNumber(this.getQuarterStartDate(), this.getQuarterEndDate());
+    } else if (opts.periodType == 'year') {
+      time = formatNumber(this.getYearStartDate(), this.getYearEndDate());
+    } else {
+      time = formatNumber(this.getNowDate(), this.getNowDate());
+    }
+    return time;
+  }
 }
 module.exports = GetPeriod;
